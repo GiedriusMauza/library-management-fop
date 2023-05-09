@@ -1,4 +1,4 @@
-package lt.viko.eif.gmauza.librarymanagementws;
+package lt.viko.eif.gmauza.librarymanagementfop;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +34,6 @@ public class FopToPdf {
         try {
             fopToPdf.convertToPDF();
         } catch (FOPException | IOException | TransformerException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

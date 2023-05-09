@@ -1,4 +1,4 @@
-package lt.viko.eif.gmauza.librarymanagementws.model;
+package lt.viko.eif.gmauza.librarymanagementfop.model;
 
 import javax.persistence.*;
 import java.util.List;
