@@ -1,13 +1,10 @@
 package lt.viko.eif.gmauza.librarymanagementws;
 
-import lt.viko.eif.gmauza.librarymanagementws.model.*;
-import lt.viko.eif.gmauza.librarymanagementws.utils.JaxbUtil;
-
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        Item item1 = new Item(
+
+
+       /* Item item1 = new Item(
                 1,
                 "Knyga1",
                 "Jablonskis",
@@ -61,8 +58,9 @@ public class Main {
                 librarian1,
                 List.of(subscriber1));
 
-        /*System.out.println(library);*/
+        *//*System.out.println(library);*//*
         String xml = JaxbUtil.transformToXML(library);
-        System.out.println(xml);
+        System.out.println(xml);*/
     }
+
 }
