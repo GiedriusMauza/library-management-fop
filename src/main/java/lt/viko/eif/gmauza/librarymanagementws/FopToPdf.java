@@ -19,8 +19,16 @@ import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 
+/**
+ * This class provides a main method to convert an FOP (Formatting Objects Processor) file to a PDF file.
+ */
 public class FopToPdf {
 
+    /**
+     * The main method to execute the FopToPdf class which converts a file to PDF format
+     *
+     * @param args the command-line arguments passed to the program
+     */
     public static void main(String[] args) {
         FopToPdf fopToPdf = new FopToPdf();
         try {

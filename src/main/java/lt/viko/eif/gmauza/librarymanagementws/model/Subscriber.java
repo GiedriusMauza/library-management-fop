@@ -3,24 +3,68 @@ package lt.viko.eif.gmauza.librarymanagementws.model;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Represents a subscriber in the library system.
+ */
 @Entity
 @Table(name = "subscriber")
 public class Subscriber {
+
+    /**
+     * The id of the subscriber.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
+
+    /**
+     * The first name of the subscriber.
+     */
     private String name;
+
+    /**
+     * The last name of the subscriber.
+     */
     private String lastName;
+
+    /**
+     * The address of the subscriber.
+     */
     private String address;
+
+    /**
+     * The phone number of the subscriber.
+     */
     private String phone;
+
+    /**
+     * The email address of the subscriber.
+     */
     private String email;
+
+    /**
+     * The list of borrowings associated with the subscriber.
+     */
     @OneToMany(targetEntity = Borrowing.class, cascade = CascadeType.ALL)
     private List<Borrowing> borrowing;
 
+    /**
+     * Creates a new subscriber instance with default values.
+     */
     public Subscriber() {
     }
 
+    /**
+     * Creates a new subscriber instance with specified values for all fields.
+     *
+     * @param name      The first name of the subscriber.
+     * @param lastName  The last name of the subscriber.
+     * @param address   The address of the subscriber.
+     * @param phone     The phone number of the subscriber.
+     * @param email     The email address of the subscriber.
+     * @param borrowing The list of borrowings associated with the subscriber.
+     */
     public Subscriber(String name, String lastName, String address, String phone, String email, List<Borrowing> borrowing) {
         this.name = name;
         this.lastName = lastName;
@@ -30,6 +74,17 @@ public class Subscriber {
         this.borrowing = borrowing;
     }
 
+    /**
+     * Creates a new subscriber instance with specified values for all fields.
+     *
+     * @param id        The id of the subscriber.
+     * @param name      The first name of the subscriber.
+     * @param lastName  The last name of the subscriber.
+     * @param address   The address of the subscriber.
+     * @param phone     The phone number of the subscriber.
+     * @param email     The email address of the subscriber.
+     * @param borrowing The list of borrowings associated with the subscriber.
+     */
     public Subscriber(int id, String name, String lastName, String address, String phone, String email, List<Borrowing> borrowing) {
         this.id = id;
         this.name = name;
@@ -96,6 +151,11 @@ public class Subscriber {
         this.borrowing = borrowing;
     }
 
+    /**
+     * Creates a formatted string representation of the object instance variables.
+     *
+     * @return A string representing the instance variables of the object.
+     */
     @Override
     public String toString() {
         return String.format("\n\t\t\tSubscriber: " +

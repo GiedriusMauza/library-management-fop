@@ -4,29 +4,64 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+/**
+ * A class representing a library.
+ */
 @Entity
 @Table(name = "library")
 @XmlRootElement(name = "library")
 public class Library {
 
+    /**
+     * The unique identifier of the library.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
+    /**
+     * The name of the library.
+     */
     private String name;
+
+    /**
+     * The address of the library.
+     */
     private String address;
+
+    /**
+     * The work hours of the library.
+     */
     private String workHours;
+
+    /**
+     * The list of subscribers that are registered to the library.
+     */
 
     @OneToMany(targetEntity = Subscriber.class, cascade = CascadeType.ALL)
     private List<Subscriber> subscribers;
 
+    /**
+     * The librarian who manages the library.
+     */
     @OneToOne(targetEntity = Librarian.class, cascade = CascadeType.ALL)
     private Librarian librarian;
 
-
+    /**
+     * Constructs a new Library object.
+     */
     public Library() {
     }
 
+    /**
+     * Constructs a new Library object with the specified parameters.
+     *
+     * @param name        the name of the library
+     * @param address     the address of the library
+     * @param workHours   the work hours of the library
+     * @param librarian   the librarian who manages the library
+     * @param subscribers the list of subscribers that are registered to the library
+     */
     public Library(String name, String address, String workHours, Librarian librarian, List<Subscriber> subscribers) {
         this.name = name;
         this.address = address;
@@ -35,6 +70,16 @@ public class Library {
         this.librarian = librarian;
     }
 
+    /**
+     * Constructs a new Library object with the specified parameters.
+     *
+     * @param id          the unique identifier of the library
+     * @param name        the name of the library
+     * @param address     the address of the library
+     * @param workHours   the work hours of the library
+     * @param librarian   the librarian who manages the library
+     * @param subscribers the list of subscribers that are registered to the library
+     */
     public Library(int id, String name, String address, String workHours, Librarian librarian, List<Subscriber> subscribers) {
         this.id = id;
         this.name = name;
@@ -92,6 +137,11 @@ public class Library {
         this.librarian = librarian;
     }
 
+    /**
+     * Creates a formatted string representation of the object instance variables.
+     *
+     * @return A string representing the instance variables of the object.
+     */
     @Override
     public String toString() {
         return String.format("Library: " +
