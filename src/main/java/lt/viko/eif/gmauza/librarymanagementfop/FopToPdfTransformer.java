@@ -22,7 +22,7 @@ import org.apache.fop.apps.MimeConstants;
 /**
  * This class provides a main method to convert an FOP (Formatting Objects Processor) file to a PDF file.
  */
-public class FopToPdf {
+public class FopToPdfTransformer {
 
     /**
      * The main method to execute the FopToPdf class which converts a file to PDF format
@@ -30,7 +30,7 @@ public class FopToPdf {
      * @param args the command-line arguments passed to the program
      */
     public static void main(String[] args) {
-        FopToPdf fopToPdf = new FopToPdf();
+        FopToPdfTransformer fopToPdf = new FopToPdfTransformer();
         try {
             fopToPdf.convertToPDF();
         } catch (FOPException | IOException | TransformerException e) {
